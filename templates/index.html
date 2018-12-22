@@ -1,0 +1,114 @@
+  <!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GrandPapy Bot : Ask Anything</title>
+    <meta name="description" content="GrandPapy Bot, talk to the internet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style type="text/css"> 
+
+      /* Styles de base */
+      body {
+        background: color = grey;
+      }
+
+      /* Images */
+      img {
+        width: 100%;
+      }
+
+    </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <header>
+      <h1>Welcome to GrandPapyBot</h1>
+      <img src="gp.jpg"/>
+    </header>
+
+    <!--<div class="container">
+      <h2>
+        This will be The thing
+      </h2>
+
+      <div class="jumbotron" id="proglang">
+        <h1>A Question for PapyBot ?</h1><br/>
+        <form class="row">
+          <div class="form-group col-lg-12">
+            <textarea class="form-control" rows="3" placeholder="your question"></textarea>
+          </div>
+          <div class="form-group col-lg-12">
+            <button type="submit" class="btn btn-default pull-right">Send</button>
+          </div>
+        </form>
+      </div>
+    </div>-->
+
+
+    <div class=container">
+      {% block body %}
+
+
+
+
+      {% endblock %}
+    </div>
+
+
+
+<!--    <script type="text/javascript">
+
+          $(document).ready(function () {
+              $('form').on('submit', function (event) {
+                  $.ajax({
+                      data: $('#search').val(),
+                      type: 'POST',
+                      url: '/response',
+                      beforeSend: function () { $("#spin").show(); },
+                      complete: function () { $("#spin").hide(); }
+                  })
+
+                  .done(function (data) {
+                      $('#output').html(data.output).show();
+                  });
+
+                  event.preventDefault();
+              });
+          });
+
+    </script>-->
+
+  </body>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>GrandPaPy Bot</strong> by Sik4.
+      </p>
+      <div id="social">
+        <p><a href="https://github.com/Sik4"><span class="icon"><i class="fab fa-github"></i></span>GitHub</a>
+        <a href="https://www.linkedin.com/in/camille-maury/"><span class="icon"><i class="fab fa-linkedin"></i></span>Linkedin</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
