@@ -1,6 +1,9 @@
 <application>
   <component name="FindSettings">
+    <option name="customScope" value="File '...\__init__.py [P7]'" />
+    <option name="defaultScopeName" value="File '...\__init__.py [P7]'" />
     <option name="localWholeWordsOnly" value="true" />
     <option name="LOCAL_WHOLE_WORDS_ONLY" value="true" />
+    <option name="SEARCH_SCOPE" value="File '...\__init__.py [P7]'" />
   </component>
 </application>
