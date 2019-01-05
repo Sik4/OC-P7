@@ -1,0 +1,84 @@
+  <!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GrandPapy Bot : Ask Anything</title>
+    <meta name="description" content="GrandPapy Bot, talk to the internet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href=" {{ url_for('static',filename='css/fontawesome.min.css.css') }}">-->
+
+
+
+  </head>
+
+  <body id="page-top">
+
+    <header>
+      <h1>Welcome to GrandPapyBot</h1>
+        <img src="../static/img/gp.jpg"/>
+
+    </header>
+
+    <div class="container">
+      <h2>
+        This will be The thing
+      </h2>
+
+
+    </div>
+
+
+    <div>
+        {% include 'index.html' %}
+        {% block body %}
+
+
+
+
+        {% endblock %}
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+          $(document).ready(function () {
+              $('form').on('submit', function (click) {
+                  $.ajax({
+                      data: $('#search').val(),
+                      type: 'GET',
+                      url: '/town_list_process',
+                      beforeSend: function () { $("#spin").show(); },
+                      complete: function () { $("#spin").hide(); }
+                  })
+
+                  .done(function (data) {
+                      $('#output').html(data.output).show();
+                  });
+
+                  event.preventDefault();
+              });
+          });
+
+    </script>
+
+  </body>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>GrandPaPy Bot</strong> by Sik4.
+      </p>
+      <div id="social">
+        <p><a href="https://github.com/Sik4"><span class="icon"><i class="fab fa-github"></i></span>GitHub</a>
+        <a href="https://www.linkedin.com/in/camille-maury/"><span class="icon"><i class="fab fa-linkedin"></i></span>Linkedin</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
