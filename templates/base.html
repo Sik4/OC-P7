@@ -25,9 +25,27 @@
     </header>
 
     <div class="container">
-      <h2>
-        This will be The thing
-      </h2>
+      <div>
+        <h3>Which city are you leaving in ?</h3>
+
+
+        <form method="GET" action="/town_list_process">
+            <p>Enter a city name</p>
+            <table>
+                <tr><td>City Name</td><td><input name='proglang' id='proglang' type='TEXT'> </td></tr>
+            </table>
+            <p>When you're ready press this button :</p>
+            <p><input value="Do it!" type = "SUBMIT"></p>
+        </form>
+
+      </div>
+      <div id="output">
+
+
+      </div>
+
+      <img id="mapurl" src=""/>
+
 
 
     </div>
@@ -49,21 +67,30 @@
 
           $(document).ready(function () {
               $('form').on('submit', function (click) {
-                  $.ajax({
-                      data: $('#search').val(),
-                      type: 'GET',
-                      url: '/town_list_process',
-                      beforeSend: function () { $("#spin").show(); },
-                      complete: function () { $("#spin").hide(); }
-                  })
-
-                  .done(function (data) {
-                      $('#output').html(data.output).show();
-                  });
-
                   event.preventDefault();
-              });
-          });
+                  var url = '/town_list_process';
+                  $.ajax({
+                    url: url
+                    , type: 'GET'
+                    , data: {
+                            'proglang' : $('#proglang').val()
+                            }
+                    , dataType: 'text'
+                    , success: function (data) {
+                        var town_output = JSON.parse(data);
+                        $('#output').html('<br>' + town_output.result);
+                        $('#mapurl').html('<br>' + town_output.mapurl);
+                        /* changing the src of map img */
+                        $('#mapurl').attr("src", town_output.mapurl);
+
+                    }
+                    , error: function (data) {
+                        console.log(data);
+                        $('#output').append('<br>' + data.statusText);
+                    }
+                })
+              })
+          })
 
     </script>
 

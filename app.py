@@ -17,19 +17,22 @@ def index():
 def town_list_process():
     with open('fr.json', 'r') as fp:
         town_list = json.load(fp)
+
     try:
-        lang = request.args.get("proglang", 0, type=str)
+        lang = request.args.get("proglang", type=str)
         user_input = str(lang).lower()
         for cities in town_list:
+            print(cities["city"])
             if cities["city"].lower() == user_input:
                 latitude = cities["lat"]
                 longitude = cities["lng"]
                 API_KEY = "AIzaSyBr59ta9mMfBqCcmIUysOKcGt9uHqgy-Qk"
                 url = "https://maps.googleapis.com/maps/api/staticmap?center=" + user_input + "&zoom=12&size=400x400" \
-                 "&markers=color:blue%7C"+ latitude + "%7C" + longitude + "key=" + API_KEY
-                return jsonify({'output': render_template('index.html', result="this is a french city", mapurl=url)})
+                "&markers=color:blue%7C"+ latitude + "%7C" + longitude + "key=" + API_KEY
+                return jsonify(result="this is a french city", mapurl=url)
+                # return jsonify({'output': render_template('index.html', result="this is a french city", mapurl=url)})
 
-        return json.dumps({'output': "nothing found"})
+    except:
+        print('Error')
 
-    except Exception as e:
-        return str(e)
+
