@@ -1,0 +1,8 @@
+https://maps.googleapis.com/maps/api/staticmap?center=Grenoble,+France&zoom=8&size=600x300&maptype=roadmap
+&markers=color:blue%7Clabel:G%7C45.196492,5.726711
+&key=AIzaSyBkKrzwEFfXOQfGR46Qn1KZoUjN7oZ8Sg0
+
+
+https://maps.googleapis.com/maps/api/staticmap?center=Grenoble,+France&zoom=1&size=400x400&maptype=roadmap
+&markers=color:blue%7Clabel:S%7C45.171546,5.722387
+&key=AIzaSyBkKrzwEFfXOQfGR46Qn1KZoUjN7oZ8Sg0
