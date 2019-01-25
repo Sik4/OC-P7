@@ -1,5 +1,29 @@
 [
     {
+        "city": "OpenClassrooms",
+        "admin": "Sik4",
+        "country": "France",
+        "population_proper": "23",
+        "iso2": "FR",
+        "capital": "admin",
+        "lat": "48.522960",
+        "lng": "2.210200",
+        "population": "23"
+    },
+    {
+        "city": "Hortus",
+        "admin": "Sik4",
+        "country": "France",
+        "population_proper": "0",
+        "iso2": "FR",
+        "capital": "admin",
+        "lat": "43.473900",
+        "lng": "3.500800",
+        "population": "0"
+    },
+
+
+    {
         "city": "Paris", 
         "admin": "\u00cele-de-France", 
         "country": "France", 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GrandPapy Bot : Ask Anything</title>
     <meta name="description" content="GrandPapy Bot, talk to the internet">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--<link rel="stylesheet" href=" {{ url_for('static',filename='css/fontawesome.min.css.css') }}">-->
 
@@ -20,29 +20,31 @@
 
     <header>
       <h1>Welcome to GrandPapyBot</h1>
-        <img src="../static/img/gp.jpg"/>
+        <img class="papy" src="../static/img/gp.jpg"/>
 
     </header>
 
     <div class="container">
       <div>
-        <h3>Which city are you leaving in ?</h3>
+        <h3>Ask a question to GrandPapy !</h3>
 
 
-        <form method="GET" action="/town_list_process">
-            <p>Enter a city name</p>
+        <form method="GET" action="/town_list_process" id="box">
+            <p>Enter your question</p>
             <table>
-                <tr><td>City Name</td><td><input name='proglang' id='proglang' type='TEXT'> </td></tr>
+                <tr>
+                    <th>What do you want to know ? </th>
+                </tr>
+                <tr>
+                    <td><input name='proglang' id='proglang' type='TEXT'></td>
+                </tr>
             </table>
             <p>When you're ready press this button :</p>
             <p><input value="Do it!" type = "SUBMIT"></p>
         </form>
 
       </div>
-      <div id="output">
 
-
-      </div>
 
       <img id="mapurl" src=""/>
 
@@ -51,7 +53,7 @@
     </div>
 
 
-    <div>
+    <div id="output">
         {% include 'index.html' %}
         {% block body %}
 
@@ -103,8 +105,8 @@
         <strong>GrandPaPy Bot</strong> by Sik4.
       </p>
       <div id="social">
-        <p><a href="https://github.com/Sik4"><span class="icon"><i class="fab fa-github"></i></span>GitHub</a>
-        <a href="https://www.linkedin.com/in/camille-maury/"><span class="icon"><i class="fab fa-linkedin"></i></span>Linkedin</a></p>
+        <p><a href="https://github.com/Sik4"><span class="icon"><i class="fa fa-github"></i></span> GitHub</a>
+        <a href="https://www.linkedin.com/in/camille-maury/"><span class="icon"><i class="fa fa-linkedin"></i></span> Linkedin</a></p>
       </div>
     </div>
   </div>
